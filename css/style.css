@@ -1,0 +1,114 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 6cm 3cm 6cm;
+    grid-template-rows: 6cm 3cm 6cm;
+    border: 2px solid #333;
+    gap: 0px;
+}
+
+.esquina {
+    width: 6cm;
+    height: 6cm;
+    border: 1px solid #2980b9;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.superior-izquierdo {
+    background-color: #00FF00; /* Green */
+}
+
+.superior-derecho {
+    background-color: #FF0000; /* Red */
+}
+
+.inferior-izquierdo {
+    background-color: #FFFF00; /* Yellow */
+}
+
+.inferior-derecho {
+    background-color: #0000FF; /* Blue */
+}
+
+.medio-horizontal {
+    width: 3cm;
+    height: 6cm;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sub-grid-horizontal {
+    display: grid;
+    grid-template-columns: repeat(3, 1cm);
+    grid-template-rows: repeat(6, 1cm);
+    width: 3cm;
+    height: 6cm;
+    border: 1px dashed #999;
+}
+
+/* Base style for all cells in horizontal sub-grids */
+.sub-grid-horizontal > div {
+    width: 1cm;
+    height: 1cm;
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF; /* Default background for these cells (white) */
+    box-sizing: border-box;
+}
+
+/* This new rule targets the specific cells you want to paint red */
+.red-cell {
+    background-color: #FF0000; /* Red color for cells with the 'red-cell' class */
+}
+
+
+.medio-vertical {
+    width: 6cm;
+    height: 3cm;
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.sub-grid-vertical {
+    display: grid;
+    grid-template-columns: repeat(6, 1cm);
+    grid-template-rows: repeat(3, 1cm);
+    width: 6cm;
+    height: 3cm;
+    border: 1px dashed #999;
+}
+
+.sub-grid-vertical > div {
+    width: 1cm;
+    height: 1cm;
+    border: 1px solid #CCCCCC;
+    background-color: #FFFFFF; /* Cells in vertical sub-grids remain white */
+    box-sizing: border-box;
+}
+
+.grid-container > div {
+    /* These styles are implicitly handled by specific classes */
+}
